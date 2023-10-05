@@ -109,34 +109,34 @@ window.addEventListener("load", () => {
     localStorage.setItem("products", JSON.stringify(existingProducts));
   }
 
-  if (location.pathname === "/admin.html") {
+  if (location.pathname === "/Ecommerce-website/admin.html") {
     loadProducts();
   }
 
-  if (location.pathname === "/index.html") {
+  if (location.pathname === "/Ecommerce-website/index.html") {
     loadIndexProducts();
   }
 
-  if (location.pathname === "/carts.html") {
+  if (location.pathname === "/Ecommerce-website/carts.html") {
     loadCartProducts();
   }
   if (
-    location.pathname === "/carts.html" ||
-    location.pathname === "/index.html" ||
-    location.pathname === "/orders.html"
+    location.pathname === "/Ecommerce-website/carts.html" ||
+    location.pathname === "/Ecommerce-website/index.html" ||
+    location.pathname === "/Ecommerce-website/orders.html"
   ) {
     updateCarts();
   }
 
-  if (location.pathname === "/orders.html") {
+  if (location.pathname === "/Ecommerce-website/orders.html") {
     loadOrder();
   }
 
-  if (location.pathname === "/updateProduct.html") {
+  if (location.pathname === "/Ecommerce-website/updateProduct.html") {
     updateproduct();
   }
 
-  if (location.pathname === "/adminOrders.html") {
+  if (location.pathname === "/Ecommerce-website/adminOrders.html") {
     loadAdminOrder();
   }
 });
@@ -160,10 +160,10 @@ let loginHandler = () => {
     } else {
       if (loginUser) {
         if (emailRef.value == "kv@admin.com" && passwordRef.value == "kv") {
-          location.replace("/admin.html");
+          location.replace("/Ecommerce-website/admin.html");
         } else {
           sessionStorage.setItem("userId", loginUser.id);
-          location.replace("/index.html");
+          location.replace("/Ecommerce-website/index.html");
         }
       }
       if (!loginUser) {
@@ -210,7 +210,7 @@ const registerHandler = () => {
 
         localStorage.setItem("users", JSON.stringify(users));
 
-        location.replace("/login.html");
+        location.replace("/Ecommerce-website/login.html");
       } else {
         errorRef.innerText = "password doesn't match!!";
       }
@@ -222,12 +222,12 @@ const registerHandler = () => {
 
 //logoutHandler()
 const logoutHandler = () => {
-  location.replace("/login.html");
+  location.replace("/Ecommerce-website/login.html");
 };
 
 //addProductHandler()
 const addProductHandler = () => {
-  location.replace("/addProduct.html");
+  location.replace("/Ecommerce-website/addProduct.html");
 };
 
 //addProduct
@@ -247,7 +247,7 @@ const add = () => {
   });
 
   localStorage.setItem("products", JSON.stringify(products));
-  location.replace("/admin.html");
+  location.replace("/Ecommerce-website/admin.html");
 };
 
 //edit handler
@@ -314,7 +314,7 @@ const update = () => {
   })
   // console.log(products)
   localStorage.setItem("products", JSON.stringify(products));  
-  location.href="/admin.html";
+  location.href="/Ecommerce-website/admin.html";
 };
 
 //loading products in admin page
@@ -329,7 +329,7 @@ const loadProducts = () => {
     <td>${product.description}</td>
     <td>${product.price}</td>
     <td class="d-flex justify-content-center">
-      <a href="/updateProduct.html" onclick="editHandler(${product.id})" class="btn btn-primary "> 
+      <a href="/Ecommerce-website/updateProduct.html" onclick="editHandler(${product.id})" class="btn btn-primary "> 
       Edit</a>
       <button type="button" onclick="deleteHandler(${product.id})" class="btn btn-danger mx-3">
         Delete
@@ -389,7 +389,7 @@ const deleteHandler = (id) => {
   const products = JSON.parse(localStorage.getItem("products"));
   const filterProducts = products.filter((product) => product.id !== id);
   localStorage.setItem("products", JSON.stringify(filterProducts));
-  location.href = "/admin.html";
+  location.href = "/Ecommerce-website/admin.html";
 };
 
 //add cart in localstorage
