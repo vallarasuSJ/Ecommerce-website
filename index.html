@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product details</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container-fluid bg-info text-white p-2">
+      <nav class="navbar navbar-expand-lg navbar-light bg-info text-white">
+        <a class="navbar-brand text-white" href="index.html">Bookspot</a>
+        <button class="navbar-toggler" type="button"></button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end bg-info text-white"
+          id="navbarTogglerDemo02"
+        >
+          <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <div class="nav-item active">
+              <a class="nav-link text-white" id="indexCartCount" href="carts.html">Carts</a>
+            </div>
+            <div class="nav-item active">
+              <a class="nav-link text-white" href="orders.html">Orders</a>
+            </div>
+            <div class="nav-item">
+              <button class="btn text-white" onclick="logoutHandler()">
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container d-flex justify-content-center mt-50 mb-50">
+      <div class="row" id="indexTable">
+        <div class="col-md-3 mt-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-img-actions">
+                <img
+                  src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780063358942_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                  class="card-img-top"
+                  height="370"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="card-body bg-light text-center">
+              <div class="mb-2">
+                <h6 class="font-weight-semibold mb-2">
+                  The Hurricane Wars (B&N Exclusive Edition)
+                </h6>
+                <p class="text-muted">
+                  A remarkable debut fantasy inspired by Southeast Asian
+                  mythology, Hurricane Wars features an enemies-to-lovers
+                  romance, incredible world-building and a unique magic system.
+                  It’s everything you love about Romantasy in one delectable
+                  package.
+                </p>
+              </div>
+
+              <h3 class="mb-0 font-weight-semibold py-2">₹2,200</h3>
+              <button
+                type="button"
+                onclick="addCart()" 
+                class="btn btn-outline-success pt-2" >Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-img-actions">
+                <img
+                  src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781250323217_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                  class="card-img-top"
+                  width="96"
+                  height="370"
+                  alt="" 
+                />
+              </div>
+            </div>
+
+            <div class="card-body bg-light text-center">
+              <div class="mb-2">
+                <h6 class="font-weight-semibold mb-2">
+                  Starling House (B&N Exclusive Edition)
+                </h6>
+                <p class="text-muted">
+                  A remarkable debut fantasy inspired by Southeast Asian
+                  mythology, Hurricane Wars features an enemies-to-lovers
+                  romance, incredible world-building and a unique magic system.
+                  It’s everything you love about Romantasy in one delectable
+                  package.
+                </p>
+              </div>
+              <h3 class="mb-0 font-weight-semibold py-2">₹1,500</h3>
+
+              <button type="button" onclick="addCart()"  class="btn btn-outline-success pt-2">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-img-actions">
+                <img
+                  src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780063291423_p0_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                  class="card-img-top"
+                  width="96"
+                  height="370"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="card-body bg-light text-center">
+              <div class="mb-2">
+                <h6 class="font-weight-semibold mb-2">
+                  A River of Golden Bones: Book One of the Golden Court
+                </h6>
+
+                <p class="text-muted">
+                  From bestselling author and TikTok sensation A.K. Mulford
+                  comes the first riveting, enchanting book in the all-new
+                  Golden Court romantasy trilogy—A River of Golden Bones begins
+                  a journey of self-discovery, romance, and adventure for a
+                  young heir
+                </p>
+              </div>
+
+              <h3 class="mb-0 font-weight-semibold py-2">₹1,200</h3>
+
+              <button type="button" class="btn btn-outline-success pt-2">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-img-actions">
+                <img
+                  src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781250343178_p0_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                  class="card-img-top"
+                  width="96"
+                  height="370"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="card-body bg-light text-center">
+              <div class="mb-2">
+                <h6 class="font-weight-semibold mb-2">
+                  The Serpent and the Wings of Night
+                </h6>
+                <p class="text-muted">
+                  The Hunger Games meets vampires in this heart-wrenching, epic
+                  fantasy romance of dark magic, and Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Sint, sed? Lorem ipsum dolor sit
+                  amet bloodthirsty intrigue from bestselling author Carissa
+                  Broadbent.
+                </p>
+              </div>
+
+              <h3 class="mb-0 font-weight-semibold py-2">₹2,180</h3>
+
+              <button type="button" class="btn btn-outline-success pt-2">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-img-actions">
+                <img
+                  src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781250899699_p0_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                  class="card-img-top"
+                  height="370"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="card-body bg-light text-center">
+              <div class="mb-2">
+                <h6 class="font-weight-semibold mb-2">
+                  Yumi and the Nightmare Painter: A Cosmere Novel
+                </h6>
+                <p class="text-muted">
+                  The Hunger Games meets vampires in this heart-wrenching, epic
+                  fantasy romance of dark magic, and bloodthirsty intrigue from
+                </p>
+              </div>
+
+              <h3 class="mb-0 font-weight-semibold py-2">₹2,500</h3>
+
+              <button type="button" class="btn btn-outline-success pt-2">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-img-actions">
+                <img
+                  src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780316568920_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                  class="card-img-top"
+                  width="96"
+                  height="370"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="card-body bg-light text-center">
+              <div class="mb-2">
+                <h6 class="font-weight-semibold mb-2">
+                  Throne of the Fallen (B&N Exclusive Edition)
+                </h6>
+                <p class="text-muted">
+                  A champion of romantasy, Kerri Maniscalco is back with her
+                  adult debut set in her massively popular Kingdom of the
+                  Wicked.
+                </p>
+              </div>
+
+              <h3 class="mb-0 font-weight-semibold py-2">₹3,100</h3>
+
+              <button type="button" class="btn btn-outline-success pt-2">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-img-actions">
+                <img
+                  src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781957568614_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                  class="card-img-top"
+                  width="96"
+                  height="370"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="card-body bg-light text-center">
+              <div class="mb-2">
+                <h6 class="font-weight-semibold mb-2">
+                  A Fire in the Flesh <br />
+                  (B&N Exclusive)
+                </h6>
+                <p class="text-muted">
+                  A champion of romantasy, Lorem, ipsum dolor sit amet. Kerri
+                  Maniscalco back adult debut set in her massively popular
+                  Kingdom of the Wicked.
+                </p>
+              </div>
+
+              <h3 class="mb-0 font-weight-semibold py-2">₹1,100</h3>
+
+              <button type="button" class="btn btn-outline-success pt-2">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-img-actions">
+                <img
+                  src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593600146_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                  class="card-img-top"
+                  width="96"
+                  height="370"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="card-body bg-light text-center">
+              <div class="mb-2">
+                <h6 class="font-weight-semibold mb-2">
+                  Sword Catcher (B&N Exclusive Edition)
+                </h6>
+                <p class="text-muted">
+                  A champion of romantasy, Kerri Maniscalco is back with her
+                  adult debut set in her massively popular Kingdom of the
+                  Wicked.
+                </p>
+              </div>
+
+              <h3 class="mb-0 font-weight-semibold py-2">₹3,000</h3>
+
+              <button type="button" class="btn btn-outline-success pt-2">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
