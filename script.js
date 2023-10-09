@@ -24,8 +24,7 @@ let existingProducts = [
     price: 1200,
     description:
       "A remarkable debut fantasy inspired by Southeast Asian mythology,Hurricane Wars features an enemies-to-loversromance, incredible world-building and a unique magic system.It’s everything you love about Romantasy in one delectable package.",
-    image:
-      "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780063291423_p0_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+    image: "",
   },
   {
     id: 4,
@@ -269,24 +268,23 @@ const updateproduct = () => {
   nameref.value = findId[0].title;
   priceref.value = findId[0].price;
   imageref.value = findId[0].image;
-  descriptionref.value = findId[0].description; 
+  descriptionref.value = findId[0].description;
 
-  products = products.map((c)=>{    
-    if(c.id===productId){
-      return{
+  products = products.map((c) => {
+    if (c.id === productId) {
+      return {
         ...c,
-        title:nameref.value,
-        price:priceref.value,
-        image:imageref.value,
-        description:descriptionref.value,
+        title: nameref.value,
+        price: priceref.value,
+        image: imageref.value,
+        description: descriptionref.value,
       };
-    }
-    else{
+    } else {
       return c;
     }
-  })
+  });
   // console.log(products)
-  localStorage.setItem("products", JSON.stringify(products)); 
+  localStorage.setItem("products", JSON.stringify(products));
 };
 
 const update = () => {
@@ -296,25 +294,24 @@ const update = () => {
   const descriptionref = document.getElementById("description");
 
   let products = JSON.parse(localStorage.getItem("products"));
-  let prodId=parseInt(sessionStorage.getItem("productId"));
+  let prodId = parseInt(sessionStorage.getItem("productId"));
 
-  products = products.map((c)=>{    
-    if(parseInt(c.id)===prodId){
-      return{
+  products = products.map((c) => {
+    if (parseInt(c.id) === prodId) {
+      return {
         ...c,
-        title:nameref.value,
-        price:priceref.value,
-        image:imageref.value,
-        description:descriptionref.value,
+        title: nameref.value,
+        price: priceref.value,
+        image: imageref.value,
+        description: descriptionref.value,
       };
-    }
-    else{
+    } else {
       return c;
     }
-  })
+  });
   // console.log(products)
-  localStorage.setItem("products", JSON.stringify(products));  
-  location.href="/Ecommerce-website/admin.html";
+  localStorage.setItem("products", JSON.stringify(products));
+  location.href = "/Ecommerce-website/admin.html";
 };
 
 //loading products in admin page
@@ -495,9 +492,8 @@ const checkOut = () => {
       });
       const otherUserCart = cart.filter((c) => c.userId !== userId);
       localStorage.setItem("cart", JSON.stringify(otherUserCart));
-      localStorage.setItem("orders", JSON.stringify(orders)); 
-      updateCarts();  
-
+      localStorage.setItem("orders", JSON.stringify(orders));
+      updateCarts();
     }
   }
 };
@@ -575,9 +571,9 @@ const loadAdminOrder = () => {
   tableRef.innerHTML = table;
 
   for (let order of orders) {
-    statusRef = document.getElementById(`status-${order.orderId}`);
+    const statusRef = document.getElementById(`status-${order.orderId}`);
     statusRef.value = order.status;
-   //console.log(statusRef.value); 
+    //console.log(statusRef.value);
     statusRef.addEventListener("change", () => {
       const orders = JSON.parse(localStorage.getItem("orders"));
       const updateStatus = orders.map((c) => {
@@ -589,9 +585,9 @@ const loadAdminOrder = () => {
         } else {
           return c;
         }
-      }); 
-      
-      localStorage.setItem("orders", JSON.stringify(updateStatus));  
+      });
+
+      localStorage.setItem("orders", JSON.stringify(updateStatus));
     });
   }
 };
